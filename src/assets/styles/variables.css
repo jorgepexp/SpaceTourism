@@ -1,0 +1,5 @@
+:root {
+  --bg-dark: hsl(230, 35%, 7%);
+  --font-light: hsl(0, 0%, 100%);
+  --font-grey: hsl(231, 77%, 90%);
+}
