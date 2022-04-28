@@ -5,7 +5,7 @@
       <h5><span aria-hidden="true"> 02 </span> meet your crew</h5>
     </header>
 
-    <img :src="getImageUrl(url)" alt="Algo" class="member-img" />
+    <img :src="getImageUrl(url)" alt="Crew member photo" class="member-img" />
 
     <div class="separator"></div>
 
@@ -86,7 +86,7 @@ export default {
           name: 'anousheh ansari',
           description:
             'Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. ',
-          role: 'engineer',
+          role: 'flight engineer',
           url: 'image-anousheh-ansari.webp',
           id: 3,
         },
@@ -165,7 +165,7 @@ export default {
 
     .member-role {
       font-size: 16px;
-      color: var(--color-font-grey);
+      color: hsl(0, 0%, 65%);
       opacity: 0.9;
       margin-bottom: 0.5em;
     }
@@ -180,6 +180,7 @@ export default {
     text-align: center;
     line-height: 25px;
     margin-bottom: 2rem;
+    color: var(--font-grey);
 
     p {
       padding: 0 2rem;
@@ -188,11 +189,10 @@ export default {
 
   .separator {
     width: 90%;
-    height: 2px;
-    // TODO Modificar color
-    background-color: hsl(0, 0%, 45%);
-    opacity: 0.2;
+    height: 1px;
 
+    background-color: hsl(0, 0%, 70%);
+    opacity: 0.2;
     margin: 0 auto;
   }
 }

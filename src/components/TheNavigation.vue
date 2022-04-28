@@ -66,11 +66,6 @@ export default {
   created() {
     console.log(this.$route);
   },
-  // computed: {
-  //   route() {
-  //     console.log(this.$route);
-  //   },
-  // },
 };
 </script>
 
@@ -78,12 +73,9 @@ export default {
 #navigation {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
-  min-height: 100px;
 
   font-family: 'Barlow Condensed';
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 2.7px;
 
   .page-logo {
@@ -99,12 +91,12 @@ export default {
   .main-navigation {
     display: flex;
     flex-direction: row;
-    gap: 2.5rem;
+    gap: 2.2rem;
 
     list-style: none;
-    background: hsl(0 0% 0% / 0.8);
+    background: hsl(0 0% 5% / 0.9);
 
-    padding-left: 10vw;
+    padding-left: 9vw;
     margin: 0;
 
     span {
@@ -125,7 +117,7 @@ export default {
   @supports (backdrop-filter: blur()) {
     .main-navigation {
       background: hsl(0 0% 15% / 0.2);
-      backdrop-filter: blur(1em);
+      backdrop-filter: blur(1rem);
     }
   }
 
@@ -181,9 +173,20 @@ export default {
 
   @media (min-width: 560px) {
     .main-navigation {
+      align-items: center;
+      transform: translateX(0%) !important;
+
       padding-block: 2rem;
       padding-inline: clamp(2rem, 10vw, 11.5rem);
-      transform: translateX(0%) !important;
+
+      li a {
+        &:hover,
+        &.router-link-exact-active {
+          border-bottom: 2px solid white;
+          padding-block: 30px;
+        }
+      }
+
       span {
         display: none;
       }
@@ -191,16 +194,8 @@ export default {
   }
 
   @media (min-width: 990px) {
-    .main-navigation {
-      li a:hover {
-        border-bottom: 2px solid white;
-        padding-block: 30px;
-      }
-
-      span {
-        display: inline;
-      }
-    }
+    // .main-navigation {
+    // }
 
     .separator {
       width: 480px;

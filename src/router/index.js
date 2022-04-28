@@ -8,12 +8,6 @@ const routes = [
       import(/* webpackChunkName: "home" */ '../views/HomeView.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
-  },
-  {
     path: '/destination',
     name: 'Destination',
     props: { url: '' },
@@ -35,6 +29,7 @@ const routes = [
   {
     path: '/technology',
     name: 'Technology',
+    props: { url: '' },
     component: () =>
       import(
         /* webpackChunkName: "technology" */ '../views/TechnologyView.vue'

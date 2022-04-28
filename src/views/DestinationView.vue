@@ -133,7 +133,8 @@ export default {
 
   header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-block-start: 7rem;
+    margin-block-end: 2rem;
 
     h5 {
       color: var(--font-light);

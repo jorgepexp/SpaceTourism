@@ -31,8 +31,8 @@ export default {
   }
   h5 {
     font-size: 28px;
-    letter-spacing: 4.75px;
-    color: var(--color-font-grey);
+    letter-spacing: 3px;
+    color: var(--font-grey);
   }
 
   h1,
@@ -51,6 +51,11 @@ export default {
     font-weight: lighter;
   }
 
+  p {
+    color: var(--color-font-grey);
+    font-size: 18px;
+  }
+
   .subh1 {
     font-size: 28px;
     color: var(--font-light);
@@ -60,11 +65,6 @@ export default {
     font-size: 14px;
     letter-spacing: 2.35px;
     text-transform: uppercase;
-  }
-
-  p {
-    color: var(--color-font-grey);
-    font-size: 18px;
   }
 
   a {

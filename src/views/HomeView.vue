@@ -32,37 +32,34 @@ export default {
 
 <style lang="scss">
 #home {
-  height: 667px;
-
+  min-height: 100vh;
   background: url('../assets/images/home/background-home-mobile.png');
   background-repeat: no-repeat;
 
-  color: var(--font-grey);
-
   header {
     text-align: center;
-    margin: 0 auto;
+    margin-inline: auto;
+    margin-block-start: 7rem;
 
-    :first-child {
-      font-size: 16px;
+    h5 {
+      font-size: 1rem;
       margin-bottom: 1.2em;
     }
 
     h2 {
       font-size: 95px;
-      color: var(--font-light);
     }
   }
 
   main {
-    // margin: 1.2rem;
     padding: 1.2rem;
     overflow: hidden;
 
     > p {
-      font-size: 18px;
-      line-height: 25px;
       text-align: center;
+      font-size: 1.1rem;
+      line-height: 25px;
+      color: var(--font-grey);
     }
 
     .explore-button {
@@ -72,7 +69,8 @@ export default {
       width: 140px;
       aspect-ratio: 1;
 
-      background-color: #fff;
+      text-transform: uppercase;
+      background-color: hsl(0, 0%, 100%);
       border-radius: 50%;
 
       cursor: pointer;
@@ -82,7 +80,7 @@ export default {
         box-shadow: 0 0 0 30px rgba(128, 128, 128, 0.35);
       }
 
-      > * {
+      > p {
         color: var(--bg-dark);
         letter-spacing: 2.5px;
       }
@@ -90,15 +88,43 @@ export default {
   }
 
   @media (min-width: 375px) {
-    min-height: 100vh;
-
     background: url('../assets/images/home/background-home-tablet.png');
     background-position: center;
+
+    header {
+      h2 {
+        font-size: 150px;
+      }
+      h5 {
+        font-size: 20px;
+      }
+    }
+
+    main {
+      > p {
+        width: 50ch;
+        margin-inline: auto;
+        margin-block-end: 10rem;
+      }
+
+      .explore-button {
+        width: 242px;
+
+        p {
+          font-size: 32px;
+        }
+      }
+    }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     background: url('../assets/images/home/background-home-desktop.png');
     background-position: bottom;
   }
+
+  // @media (min-width: 1024px) {
+  //   background: url('../assets/images/home/background-home-desktop.png');
+  //   background-position: bottom;
+  // }
 }
 </style>
