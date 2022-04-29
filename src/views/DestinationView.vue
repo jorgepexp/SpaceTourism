@@ -44,15 +44,18 @@
     <div class="separator" aria-hidden="true"></div>
 
     <div class="planet-coordinates">
-      <p class="subh2">avg. distance</p>
-      <p class="subh1">
-        {{ $route.params.avgDistance ?? destinationsList[0].avgDistance }}
-      </p>
-
-      <p class="subh2">est. travel time</p>
-      <p class="subh1">
-        {{ $route.params.travelTime ?? destinationsList[0].travelTime }}
-      </p>
+      <div>
+        <p class="subh2">avg. distance</p>
+        <p class="subh1">
+          {{ $route.params.avgDistance ?? destinationsList[0].avgDistance }}
+        </p>
+      </div>
+      <div>
+        <p class="subh2">est. travel time</p>
+        <p class="subh1">
+          {{ $route.params.travelTime ?? destinationsList[0].travelTime }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -133,12 +136,11 @@ export default {
 
   header {
     text-align: center;
-    margin-block-start: 7rem;
-    margin-block-end: 2rem;
+    margin-block: 7rem 2rem;
 
     h5 {
       color: var(--font-light);
-      font-size: 16px;
+      font-size: 1rem;
       letter-spacing: 3px;
     }
 
@@ -151,27 +153,30 @@ export default {
 
   .planet-image {
     display: flex;
-    margin: 0 auto;
-
+    margin-inline: auto;
+    margin-block-end: 2rem;
     width: 170px;
   }
 
   .planet-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 2rem;
 
     width: 70%;
     margin-block: 1rem 2rem;
     margin-inline: auto;
 
     li {
-      cursor: pointer;
       display: block;
-      line-height: 30px;
+      font-size: 0.875rem;
+      line-height: 40px;
+      letter-spacing: 2px;
+      cursor: pointer;
 
       & p {
-        border-bottom: 2px solid transparent;
+        border-bottom: 3px solid transparent;
       }
 
       & :hover {
@@ -185,32 +190,36 @@ export default {
       .router-link-active p,
       .default-active p {
         color: white;
-        border-bottom: 2px solid white;
+        border-bottom: 3px solid white;
       }
     }
   }
 
   .planet-description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 38ch;
     text-align: center;
+
     line-height: 25px;
-    margin-bottom: 2rem;
+    margin-block-end: 2.5rem;
+    margin-inline: auto;
 
     h3 {
       color: var(--font-light);
-      margin: 2.5rem 0 1.2rem 0;
+      margin-block-end: 1.2rem;
     }
 
     p {
-      padding: 0 2rem;
+      padding-inline: 2rem;
     }
   }
 
   .separator {
     width: 90%;
-
     border-bottom: 1px solid var(--font-grey, 10%);
     opacity: 0.2;
-
     margin: 0 auto;
   }
 
@@ -218,15 +227,64 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 0.7rem;
 
     margin-top: 2rem;
+
+    > :nth-child(even) {
+      margin-block-end: 1rem;
+    }
   }
 }
 
 @media (min-width: 768px) {
   #destination-view {
     background-image: url('../assets/images/destination/background-destination-tablet.jpg');
+
+    header {
+      text-align: start;
+      margin-block: 3rem 4rem;
+      margin-inline: 2rem;
+
+      h5 {
+        font-size: 1.25rem;
+      }
+    }
+    .planet-image {
+      width: 300px;
+    }
+
+    .planet-nav {
+      margin-block-end: 4rem;
+
+      li {
+        font-size: 1rem;
+      }
+    }
+
+    .planet-description {
+      h3 {
+        font-size: 80px;
+        margin-block-end: 2rem;
+      }
+
+      p {
+        width: 75ch;
+      }
+    }
+
+    .planet-coordinates {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0 6rem;
+
+      > div {
+        display: grid;
+        place-items: center;
+        gap: 0.5rem;
+      }
+    }
   }
 }
 

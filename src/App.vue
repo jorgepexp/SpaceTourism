@@ -53,7 +53,6 @@ export default {
 
   p {
     color: var(--color-font-grey);
-    font-size: 18px;
   }
 
   .subh1 {
